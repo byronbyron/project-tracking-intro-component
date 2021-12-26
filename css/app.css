@@ -406,4 +406,130 @@ p {
   color: #3e52a3;
 }
 
+.header__navbar {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header__logo {
+  margin-right: auto;
+  display: block;
+}
+.header__logo img {
+  display: block;
+  width: 24px;
+  height: auto;
+}
+
+.header__nav-collapse {
+  position: absolute;
+  top: 6.375rem;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  transform: scale3d(0.95, 0.95, 1) translate3d(0, 1rem, 0);
+  transition: visibility 0.15s, opacity 0.15s, transform 0.15s;
+}
+.header__nav-collapse.show {
+  visibility: visible;
+  opacity: 1;
+  transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+}
+
+.header__nav {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.header__nav-link {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  color: black;
+  padding: 0.5rem 0;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.hamburger {
+  font: inherit;
+  display: flex;
+  overflow: visible;
+  margin: 0 -15px 0 0;
+  padding: 15px;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+}
+
+.hamburger-box {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+}
+
+.hamburger-inner,
+.hamburger-inner::after,
+.hamburger-inner::before {
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform;
+  background-color: black;
+}
+
+.hamburger-inner::before {
+  content: "";
+  top: 7px;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform, opacity;
+}
+
+.hamburger-inner::after {
+  content: "";
+  top: 14px;
+}
+
+.active .hamburger-inner {
+  transform: translate3d(0, 9px, 0) rotate(45deg);
+}
+
+.active .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(0, -6px, 0);
+  opacity: 0;
+}
+
+.active .hamburger-inner::after {
+  transform: translate3d(0, -14px, 0) rotate(-90deg);
+}
+
+@media (min-width: 991px) {
+  .hamburger {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=app.css.map*/
