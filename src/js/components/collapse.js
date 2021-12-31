@@ -3,7 +3,6 @@ const targetId = btn.getAttribute('aria-controls');
 const target = document.querySelector(`#${targetId}`);
 
 btn.addEventListener('click', toggleCollapse);
-menuOverlay.addEventListener('click', toggleCollapse);
 
 function toggleCollapse(e) {
     (this.getAttribute('aria-expanded') === 'true')
